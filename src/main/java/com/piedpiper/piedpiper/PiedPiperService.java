@@ -30,23 +30,17 @@ public class PiedPiperService {
 	}
 	
 	private int countDeafRats(String part) {
-		int deaf = 0;		
+		int deafs = 0;		
 		char[] list= part.toCharArray();
 		
-		if(list != null && list.length>0) {
-			if(list[0] == '~') {
-				deaf++;
-				for(int i =0; i < list.length ; i++) {
-					if(i+3 < list.length ) {
-						if(list[i+2] == '~' && list[i+3]=='O') {
-							deaf++;
-						}
-					}
-				}
+		for(int i =0; i <list.length; i ++) {
+			if(list[i] == '~' && list[i+1] == 'O') {
+				deafs++;
 			}
 		}
+	
 		
-		return deaf;
+		return deafs;
 	}
 
 	public void test() {

@@ -19,7 +19,7 @@ public class PiedPiperController {
 	public @ResponseBody ReturnEntity getDeafRats(@RequestParam String inputString) {
 		
         //String test = "~O~O~O~OP";
-        //String inputString = "PO~O~~OO~";
+        //String inputString = "PO~O~~OO~"; ok
         //String test = "~OO~~O~OPO~~OO~";
 		ReturnEntity returnEntity = piedPiperService.getDeafRats(inputString);
 		return returnEntity;

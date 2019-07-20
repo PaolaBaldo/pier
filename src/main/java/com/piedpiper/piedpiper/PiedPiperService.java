@@ -19,24 +19,41 @@ public class PiedPiperService {
 		if (inputString.contains(PIED_PIPER)) {
 			index = inputString.indexOf("P");
 		}
+		//String test = "~OO~~O~OPO~~OO~";
 		String part2 = inputString.substring(index + 1, length);
 
 		String part1 = inputString.substring(0, index);
 		
-		count = count + countDeafRats(part1) + countDeafRats(part2);
+		count = count + countDeafRatsRightSide(part1) + countDeafRatsLeftSide(part2);
 
 		
 		return new ReturnEntity(inputString, count);
 	}
 	
-	private int countDeafRats(String part) {
+	private int countDeafRatsLeftSide(String part) {
 		int deafs = 0;		
 		char[] list= part.toCharArray();
 		
-		for(int i =0; i <list.length; i ++) {
+		for(int i =0; i <list.length; i=i+2) {
 			if(list[i] == '~' && list[i+1] == 'O') {
 				deafs++;
 			}
+			//i = i+1;
+		}
+	
+		
+		return deafs;
+	}
+	
+	private int countDeafRatsRightSide(String part) {
+		int deafs = 0;		
+		char[] list= part.toCharArray();
+		
+		for(int i =0; i <list.length; i=i+2) {
+			if(list[i] == 'O' && list[i+1] == '~') {
+				deafs++;
+			}
+			//i = i+1;
 		}
 	
 		

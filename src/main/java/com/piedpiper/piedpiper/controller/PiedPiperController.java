@@ -1,10 +1,13 @@
-package com.piedpiper.piedpiper;
+package com.piedpiper.piedpiper.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.piedpiper.piedpiper.model.DeafRatsEntity;
+import com.piedpiper.piedpiper.service.PiedPiperService;
 
 @RestController
 public class PiedPiperController {
@@ -17,13 +20,11 @@ public class PiedPiperController {
     }
 		
 	@RequestMapping(value = "/deafrats/getdeafrats", method = RequestMethod.GET)
-	public @ResponseBody ReturnEntity getDeafRats(@RequestParam String inputString) {
+	public @ResponseBody DeafRatsEntity getDeafRats(@RequestParam String inputString) {
 		
-        //String test = "~O~O~O~OP";
-        //String inputString = "PO~O~~OO~"; ok
-        //String test = "~OO~~O~OPO~~OO~";
-		ReturnEntity returnEntity = service.getDeafRats(inputString);
-		return returnEntity;
+    
+		DeafRatsEntity deafRatsEntity = service.getDeafRats(inputString);
+		return deafRatsEntity;
    	
 	}
 	

@@ -1,12 +1,12 @@
-package com.piedpiper.piedpiper;
+package com.piedpiper.piedpiper.model;
 
-public class ReturnEntity {
+public class DeafRatsEntity {
 	
 	private String inputString;
 	private int deafRatsQuantity;
 	
 	
-	public ReturnEntity(String inputString, int deafRatsQuantity) {
+	public DeafRatsEntity(String inputString, int deafRatsQuantity) {
 		super();
 		this.inputString = inputString;
 		this.deafRatsQuantity = deafRatsQuantity;
